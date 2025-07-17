@@ -4,12 +4,16 @@ require('dotenv').config();
 const db = require('./config/db')
 const PORT = process.env.PORT;
 const authRoute = require('./routes/authRoutes')
+const userRoute = require('./routes/userRoutes')
 
 // middleware 
 app.use(express.json());
 
 // routes
-app.use('/api/auth', authRoute)
+app.use('/api/auth', authRoute);
+app.use('/api/user', userRoute);
+
+
 
 
 app.listen(PORT, ()=>{
